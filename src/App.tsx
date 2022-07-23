@@ -1,15 +1,16 @@
 import React from 'react';
+import Market from './components/Market';
+import UserOverview from './components/UserOverview';
 
 function App() {
   return (
     <div className="bg-black h-screen p-4">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        
-      </header>
+      {/* USER overview and writing of calls */}
+      <UserOverview/>
+      {/*  */}
+      <div className="market-container">
+      <Market/>
+      </div>
     </div>
   );
 }
