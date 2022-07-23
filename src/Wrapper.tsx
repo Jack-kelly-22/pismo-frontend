@@ -7,15 +7,27 @@ import {useState} from 'react';
 
 import { ethers } from 'ethers'
 import Navbar from './components/Navbar';
-// const web3Provider = // ...
-// const provider = new ethers.providers.Web3Provider(web3Provider)
+import { connectToMetamask } from './hooks/useWallet';
+
 export default function Wrapper(){
+
+  const connectWallet = async () => {
+    if (!connected) {
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+      const user = await connectToMetamask(provider);
+      setConnected(true);
+      setProvider(provider);
+      setUser(user);
+    }
+  }
+
   const [connected, setConnected] = useState(false);
+  const [provider, setProvider] = useState({} as ethers.providers.Web3Provider);
   const [user , setUser] = useState({});
   
     return(
-        <div className='bg-poly-bg bg-contain bg-fixed text-white ' > 
-        <Navbar connected={connected} user={user} setUser={setUser} setConnected={undefined}/>
+        <div className='p-3 bg-black' > 
+        <Navbar connected={connected} setConnected={setConnected} connect={connectWallet} />
         <BrowserRouter>
         <Routes>
           {/* HOME PAGE */}
