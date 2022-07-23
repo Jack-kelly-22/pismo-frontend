@@ -33,12 +33,18 @@ const CovNFT = (cov: Cov) => {
     const { strike, duration, collateral, collateralTokenSymbol, collateralTokenPrice } = cov;
     const graphProps = calcInterval(strike);
         return (
-            <div className="rounded-3xl text-center text-white bg-gradient-to-br from-cyan-500 to-blue-300 w-80 h-100">
+                <div className=" w-80 h-100 rounded-3xl text-center text-white mx-auto  mt-10 bg-gradient-to-r p-[6px] from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]">
+   <div className="flex flex-col justify-between h-full bg-black text-white rounded-lg p-4">
+
                 <h1 className="cov-header">{collateralTokenSymbol} @ {strike}</h1>
                 <GraphOutline {...graphProps}/>
                 <p className="opacity-60 p-3 text-right w-full">est. val {estValue(cov)}</p>
-                <img className={`w-10 h-10 rounded-full `} title={collateralTokenSymbol} src={`./tokens/asset_${collateralTokenSymbol}.png`} alt={collateralTokenSymbol} />
-            </div>
+                <div className="flex flex-row justify-end p-3">
+                <img className={`w-10 h-10 rounded-full `} title={collateralTokenSymbol} src={`tokens/asset_${collateralTokenSymbol}.png`} alt={collateralTokenSymbol} />
+                <button className=" rounded-lg outline outline-2 outline-white px-4 py-2">Buy</button>
+                </div>
+     </div>
+</div>
         );
     }
 
