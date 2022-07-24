@@ -11,7 +11,7 @@ export const connectToMetamask = async (provider: any ) => {
     const userData = {
         walletAddress: accounts[0],
         balances : {
-            cUSD: balanceInEther,
+            token : balanceInEther,
         }
     }
     console.log("USERDATA:",userData)

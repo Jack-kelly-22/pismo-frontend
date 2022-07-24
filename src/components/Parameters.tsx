@@ -28,7 +28,7 @@ const Parameters = () => {
                 {/* Strike */}
                 <div className="flex flex-row justify-between gap-4 p-3" >
                     <p className="text-lg"> Strike </p>
-                    <select className="w-40 text-black rounded-lg" value={duration} placeholder="duration" onChange={(event) => setDuration(event.target.value)}>
+                    <select className="w-40 text-black rounded-lg" value={duration} placeholder="duration" onChange={(event) => setStrike(event.target.value)}>
                         {incriments.map((incriment) => (
                             <option value={incriment}>{incriment}</option>
                         ))}
@@ -39,7 +39,6 @@ const Parameters = () => {
                     <p className="text-lg"> Collateral ({token}) </p>
                     <input className="w-40 text-black rounded-lg" value={collateral} placeholder="collateral" onChange={(event) => setCollateral(event.target.value)}/>
                 </div>
-
             </div>
         </div>
     )

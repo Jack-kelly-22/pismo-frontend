@@ -1,6 +1,6 @@
 import { LimitOrderProtocolFacade, Web3ProviderConnector } from "@1inch/limit-order-protocol";
 // import { Web3Provider } from "@ethersproject/providers";
-import Web3 from 'web3';
+// import Web3 from 'web3';
 export const Inch = () => {
     console.log("calling inch");
 }

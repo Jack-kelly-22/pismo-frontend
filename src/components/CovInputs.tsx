@@ -20,20 +20,13 @@ const durations = [
     }
 ];
 
-const calcStrikes = (currentPrice: number, increment:number, count:number) => {
-    // round current price to nearest increment
-    const roundedPrice = Math.round(currentPrice / increment) * increment;
-    const strikes = [];
-    for (let i = 0; i < count; i++) {
-        strikes.push(roundedPrice + (i * increment));
-    }
-    return strikes;
-}
+
 
 const CovInputs = () => {
     return (
         <div className="cov-inputs">
             <div className="cov-input">
+                {/* Dropdowns for  */}
 
             </div>
         </div>
