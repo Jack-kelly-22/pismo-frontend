@@ -15,11 +15,6 @@ const createLimitOrderFacade = (limitContractAddresss:string, provider:any) => {
         limitContractAddresss,
         connector
     );
-    
-
-
-
-
 }
     
 
@@ -27,7 +22,3 @@ export const listCoveredCall = async () => {
     console.log("list covered call");
 
 }
-
-
-
-

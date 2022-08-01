@@ -10,6 +10,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.chain-dropdown {
+  border-radius: 80px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  padding: 10px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

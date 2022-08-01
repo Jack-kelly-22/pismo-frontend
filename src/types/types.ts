@@ -9,3 +9,9 @@ export type Cov = {
     owner: string;
 
 }
+
+export type Chain = {
+    id: string;
+    name: string;
+    symbol: string;
+}

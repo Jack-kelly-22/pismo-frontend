@@ -21,12 +21,7 @@ export default function Navbar({ connect, connected, setConnected }: NavbarProps
                 </a>
                 <div className="flex flex-row gap gap-3 p-1 items-center">
                     <Icons />
-                    {/* <select className="w-40 text-black rounded-lg" placeholder="duration" onChange={(event) => switchChain(event.target.value)}>
-                        {chains.map((chain) => (
-                            <option value={chain.id}>{chain.name}</option>
-                        ))}
-                    </select> */}
-                    <ChainDropdown  chains={chains}/>
+                    <ChainDropdown  chains={chains} currentChain={chains[0]}/>
                     {connected ? (
                         <button className="h-10 text-green outline outline-2 outline-green font-bold py-1 px-2 rounded-3xl">Connected</button>) :
                         (<button onClick={connect} className=" h-10 rounded-lg font-lg font-bold px-2 py-1  hover:bg-black hover:text-white bg-white border border-3 border-white" >Connect Wallet</button>)

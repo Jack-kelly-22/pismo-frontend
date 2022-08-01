@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "module": "commonjs",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,7 +22,17 @@
     "jsx": "react-jsx",
 	"typeRoots": ["./node_modules/@types", "./src/types"]
   },
+
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+
   "include": [
-    "src"
-  ]
+    "src",
+    "src/**/*"
+  ],
+  "exclude": ["node_modules"]
 }

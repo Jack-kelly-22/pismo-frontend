@@ -6,26 +6,30 @@ interface Props {
     // connect: (target:any) => void;
     // setConnected: (connected: boolean) => void;
     chains: Chain[];
+    currentChain: Chain;
 }
 
-const ChainDropdown = ({chains}:Props) => {
-    
+const ChainDropdown = ({ chains, currentChain }: Props) => {
+
     useEffect(() => {
         console.log("ON page reload")
-    } 
-     , []);
-    
-    
-    
+    }
+        , []);
+
     return (
-        <div className="chain-dropdown">
-        <select onChange={(event)=>switchChain(event.target.value)} value={chains[0].id}>
-            {/* <option value={chains[0]} onChange={(event)=>connect(event.target.value.id){</select>}>Select a chain</option> */}
-            {chains.map((chain) => (
-                            <option value={chain.id}>{chain.name}</option>
-                        ))}
-        </select>
+        <div>
+            <select className="chain-dropdown" onChange={(event) => switchChain(event.target.value)} value={currentChain.id}>
+                {/* <option value={chains[0]} onChange={(event)=>connect(event.target.value.id){</select>}>Select a chain</option> */}
+                {chains.map((chain) => (
+                    <option value={chain.id}>
+                        <div className="flex flex-row justify-between p-2 p-1">
+                            <img className="w-10 h-10" src={`./tokens/asset_{symbol}.png`}/>
+                        {chain.name}
+                        </div>
+                    </option>
+                ))}
+            </select>
         </div>
     );
-    }
+}
 export default ChainDropdown;

@@ -155,7 +155,7 @@ contract MarginTradingNotifReceiver is IMarginTradingNotifReceiver, Initializabl
     }
 
     function owner() public view override(IMarginTradingNotifReceiver, OwnableUpgradeable) returns (address) {
-        return super.owner();
+        return superr();
     }
 
     receive() external payable {}
